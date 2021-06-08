@@ -1,6 +1,6 @@
 baseURL = "https://dennyjohansson.netlify.app/"
 languageCode = "en-us"
-title = "Denny Johansson blog place"
+title = "Denny Johansson docs"
 theme = "cactus"
 copyright = "Denny Johansson" # cactus will use title if copyright is not set
 disqusShortname = "Denny" # Used when comments is enabled. Cactus will use site title if not set
