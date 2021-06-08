@@ -48,7 +48,7 @@ weight = 5
   googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
 
   # Home page settings
-  description = "Wth is this? -> I want to come out of my comfort zone and learn how to write and share. I want to document and share what's currently in my mind, if I successfully gets this into a weekly habit it will be a great tool to remember things! I want to nudge myself to create more on my spare time and the need for content might be a great carrot? My main focus will be web development but hopefully other topics will popup (vim, CrossFit, food, Magic the Gathering, keyboards, fermentation)."
+  description = "Wth is this? -> I want to document and share what's currently in my mind and if I successfully gets this into a habit it will be a great tool to remember things! I want to nudge myself to create more on my spare time and the need for content might be a great carrot? My main focus will be web development but other topics will popup"
   mainSection = "posts" # your main section
   showAllPostsOnHomePage = false # default
   postsOnHomePage = 5 # this option will be ignored if showAllPostsOnHomePage is set to true
