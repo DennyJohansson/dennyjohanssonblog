@@ -14,5 +14,5 @@ git submodule update
 `hugo server -D`
 
 #### New post
-`hugo new content/posts/<date-name>
+`hugo new content/posts/<date-name>`
 
