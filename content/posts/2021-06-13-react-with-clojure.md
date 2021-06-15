@@ -1,12 +1,12 @@
 ---
 title: "React With Clojure"
 date: 2021-06-13T20:48:02+02:00
-draft: true
 category: notes
 tags:
     - ClojureScript
     - Reagent
     - atom
+    - Rich Hickey
     - immutable
     - sourdough
     - bakers percentage
