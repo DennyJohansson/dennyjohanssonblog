@@ -39,12 +39,13 @@ This would give an bakers percentage of 80%! Then I have around 10%-20% sourdoug
 
 I always have to calculate and write this down and decided to make my life a little easier and started to work on a dough calculater app!
 
-### Tech choice
-For this I wanted to try ClojureScript and Reagent!
+### Tech choice!
+I wanted o try writing React with Clojure and decided to go with Reagent!
 
 ## Clojure
+Rich Hickey is the creator of Clojure and I love watching youtube videos on he's talks! He also have created an immutable database called Datomic!
 
-I been a fan of Clojure since the first time I saw it, it's an functional language on the Java platform but as a Javascript dev I'm mostly exited to write ClojureScript! In ClojureScript you can write Clojure but can still import Javascript libraries with npm.
+I been a fan of Clojure since the first time I saw it, it's an functional language on the Java platform but as a Javascript dev I first noticed it because of ClojureScript! In ClojureScript you can write Clojure and still import Javascript libraries with npm, but it depends on the extension.
 
 There is 3 diff extensions for Clojure
 
@@ -52,8 +53,8 @@ There is 3 diff extensions for Clojure
 - `cljs` compiles to javascript
 - `cljc` can be compiled to either but then you can't use javascript
 
-### Immutable data structures
-Clojure have immutable data structures and if you want to mutate something there is a few ways to do that and one way is to use an atom. An atom is a container for a value and the value can be swaped with a new value, it makes it more explicit!
+### Immutable data structures and atom
+Clojure have immutable data structures and if you want to use something as a state you can use atoms, an atom is a container for a value and the value can be swaped with a new value. Atoms are free of race-conditions and works very well with mutli threads.
 
 ### Reagent
 
@@ -72,7 +73,7 @@ I reused these examples from [Reagents git](https://github.com/reagent-project/r
 ```
 
 #### r/atom
-Reagent have their own version of atom that will re-render components when needed! It's like Redux but without any boilerplate! ClojureScript already have immutable data structures and atoms so it's just to create an atom, deref it or swap it!
+Reagent have their own version of atom that will re-render components when needed, it's like Redux but without any boilerplate.
 
 ```Also example from Reagents git
 (defonce click-count (r/atom 0))
@@ -84,13 +85,15 @@ Reagent have their own version of atom that will re-render components when neede
 ```
 
 ### REPL, Read Eval Print Loop 
-Also worth mentioning is the Clojure REPL! You can run evaluate the code inside the editor like it was the browser console, also a REPL is connected to the browser. I have not been experimenting anything with it and can only imagine what to do with it!
+Also worth mentioning is the Clojure REPL! You can evaluate the code inside the editor like it was the browser console, also a REPL is connected to the browser. I have not been experimenting anything with it and can only imagine what to do with it!
 
 ### Performance of Reagent
-[Reagent mentions](https://github.com/reagent-project/reagent#performance) that sometimes Reagent is actually faster then React a lot of times!
+[Reagent mentions](https://github.com/reagent-project/reagent#performance) that sometimes Reagent is actually __faster then React__ a lot of times!
 
 ### The work Dough calculator
-I started creating this first project a long time ago but then I got so frustrated with the range fields logic and never really got it to work! I picked it up again and restarted it and this time my brain had already figured out how it should be done and it went pretty fast!
+I started working on this project a long time ago but then I got so frustrated with the sliders logic and never really got it to work as I wanted! 
+
+Now stared this blog I got motivated to pick it up again, this time my brain had already figured out how it should be done and it went pretty fast!
 
 To start a Reagent project I first needed to install [leiningen](https://leiningen.org/) and OpenJDK v8, I used brew for both:
 
@@ -111,9 +114,9 @@ This will create the new Reagent project and also add [figwheel](https://figwhee
 lein fighweel
 ```
 
-Now the dev environment is up and running and ready for code! I browsed around and found an example very close to what I needed! It was an 3 range fields calculating BMI, this was a good starting point for me being new to this language and libraries. The code I now had was 3 parts:
+Now the dev environment is up and running and ready for code! I browsed around and found an example very close to what I needed! It was 3 sliders calculating BMI, this was a good starting point for me being new to Reagent and Clojure. The code I now had was:
 
-1. my atom state using the reagent atom containing the initial state, basically functioning like Redux.
+1. My app state inside an reagent/atom state, functioning like Redux.
 ```
 (def perc-data (reagent/atom (calc-perc {:flour 1600 :liquid 1200 :sourdough 20 })))
 ```
@@ -126,7 +129,7 @@ Now the dev environment is up and running and ready for code! I browsed around a
       (assoc data :perc (/ liquid h)) 
       (assoc data :liquid (* perc h)))))
 ```
-3. The range slider component that is being used to choose flour, liquid, percentage and sourdough
+3. The slider component that is being used to choose flour, liquid, percentage and sourdough
 ```
 (defn slider [param value min max invalidates]
   [:input {:type "range" :value value :min min :max max
@@ -140,7 +143,7 @@ Now the dev environment is up and running and ready for code! I browsed around a
 				     (dissoc invalidates)
 				     calc-perc)))))}])
 ```
-4. Then we have the whole page with header and the sliders
+4. Then we have the whole calculator component dislplaying an header and the sliders
 ```
 (defn perc-component []
   (let [{:keys [liquid flour perc sourdough]} @perc-data
@@ -169,14 +172,14 @@ Now the dev environment is up and running and ready for code! I browsed around a
 ```
 
 ### MVP done, v1.0 tag
-This is basically it for the MVP of [this project](https://github.com/DennyJohansson/baking)! I have created a git tag v1.0 and it will be in the state as it is now when I'm writing this!
-
+This is it for the MVP of [this project](https://github.com/DennyJohansson/baking)! I have created a git tag v1.0 and it will be in the state as it is now when I'm writing this!
 
 #### Continue???
-If I continue with this there are a few things I wanted to do:
-- [ ] I want to create some smooth slider to easily inc/dec the numbers! Then I would't need to add a max limit!
+When I continue with this calculator I want to do:
+- [ ] Create some smooth slider to easily inc/dec the numbers! Then I would't need to add a max limit!
 - [ ] Save the state in localStorage
 - [ ] Being able to save history to server, perhaps using [re-frame](https://github.com/day8/re-frame)
+
  
 TODO: add bread and project images + link to prject demo 
 
