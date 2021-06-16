@@ -86,5 +86,3 @@ All themes are located in `themes/` as git submodules and I had 1 issue with Net
 	url = https://github.com/monkeyWzr/hugo-theme-cactus.git
 ```
 
-
-// Denny Johansson
