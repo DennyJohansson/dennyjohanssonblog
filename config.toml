@@ -45,7 +45,7 @@ weight = 5
 
   colortheme = "white" # dark, light, white, or classic
   rss = true # generate rss feed. default value is false
-  googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
+  googleAnalyticsAsync = false # use asynchronous tracking. Synchronous tracking by default
 
   # Home page settings
   description = "Wth is this? -> I want to document and share what's currently in my mind and if I successfully gets this into a habit it will be a great tool to remember things! I want to nudge myself to create more on my spare time and the need for content might be a great carrot? My main focus will be web development but other topics will popup"
