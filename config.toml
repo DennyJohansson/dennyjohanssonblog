@@ -4,7 +4,7 @@ title = "Denny Johansson docs"
 theme = "cactus"
 copyright = "Denny Johansson" # cactus will use title if copyright is not set
 disqusShortname = "dennyjohansson" # Used when comments is enabled. Cactus will use site title if not set
-googleAnalytics = "G-1RNYJ3VS9P"
+googleAnalytics = "G-4ECPWPPV89"
 
 
 # summaryLength = 2
