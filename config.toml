@@ -3,8 +3,8 @@ languageCode = "en-us"
 title = "Denny Johansson docs"
 theme = "cactus"
 copyright = "Denny Johansson" # cactus will use title if copyright is not set
-disqusShortname = "Denny" # Used when comments is enabled. Cactus will use site title if not set
-# googleAnalytics = "UA-1234-5"
+disqusShortname = "dennyjohansson" # Used when comments is enabled. Cactus will use site title if not set
+# googleAnalytics = "G-1RNYJ3VS9P"
 
 
 # summaryLength = 2
@@ -64,7 +64,7 @@ weight = 5
   showReadTime = false # default
 
   [params.comments]
-    enabled = false # default
+    enabled = true # default
     engine = "disqus" # more supported engines will be added.
 
   # the value of name should be an valid font awesome icon name (brands type)
